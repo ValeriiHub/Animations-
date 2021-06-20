@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
     
-        
+    var index = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +29,13 @@ class ViewController: UIViewController {
 
     @IBAction func springButtonPressed(_ sender: SpringButton) {
         
-        let animation = Animations.getAnimations()
+        if index != 25 {
+            index += 1
+        } else {
+            index = 0
+        }
+        
+        let animation = Animations.getAnimations(index: index)
         
         springView.animation = animation.animation
         springView.curve = animation.curve
@@ -42,6 +49,11 @@ class ViewController: UIViewController {
         forceLabel.text = String(format: "%.2f", animation.force)
         durationLabel.text = String(format: "%.2f", animation.duration)
         delayLabel.text = String(format: "%.2f", animation.delay)
+        
+        let nextIndex = index == 25 ? 0 : (index + 1)
+        let nextAnimations = (Animations.getAnimations(index: nextIndex)).animation
+        
+        sender.setTitle("Run: \(nextAnimations)", for: .normal)
     }
 }
 

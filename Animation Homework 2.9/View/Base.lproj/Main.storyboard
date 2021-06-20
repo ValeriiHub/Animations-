@@ -21,10 +21,10 @@
                                 <rect key="frame" x="82" y="586" width="250" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="WID-Fk-X5m"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="WID-Fk-X5m"/>
                                     <constraint firstAttribute="height" constant="50" id="Xx9-BH-axX"/>
                                 </constraints>
-                                <state key="normal" title="Next Animation">
+                                <state key="normal" title="Run Animation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

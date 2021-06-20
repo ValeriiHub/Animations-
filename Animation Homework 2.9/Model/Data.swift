@@ -9,7 +9,7 @@ import UIKit
 
 extension Animations {
     
-    static func getAnimations() -> Animations {
+    static func getAnimations(index: Int) -> Animations {
         
        let animation = ["shake",
                         "pop",
@@ -44,7 +44,7 @@ extension Animations {
                      "easeOut",
                      "easeInOut"]
         
-        return Animations(animation: animation.randomElement()!,
+        return Animations(animation: animation[index],
                           curve: curve.randomElement()!,
                           force: CGFloat.random(in: 1.0...5.0),
                           duration: CGFloat.random(in: 1.0...3.0),
